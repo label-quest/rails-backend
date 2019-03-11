@@ -30,7 +30,7 @@ class LabelsController < ApplicationController
         @label.dataset.labels.each do |label|
           train_sample = {
             file_path: label.image.file_path,
-            label: @label.dataset_class.name
+            label: @label.dataset.majority_class
           }
           json_body[:data].push(train_sample)
         end
