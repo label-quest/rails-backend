@@ -17,6 +17,7 @@ class LabelsController < ApplicationController
 
   # POST /labels
   def create
+    byebug
     @label = Label.new(label_params)
 
     if @label.save

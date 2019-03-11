@@ -1076,3 +1076,181 @@ Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 1.8ms)
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mLabel Create (0.3ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.5], ["y_pos", 0.3], ["user_id", 2], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-11 14:22:36.537296"], ["updated_at", "2019-03-11 14:22:36.537296"]]
   [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLabel Create (0.9ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.5], ["y_pos", 0.3], ["user_id", 2], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-11 14:31:42.539365"], ["updated_at", "2019-03-11 14:31:42.539365"]]
+  [1m[35m (26.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/dataset_classes" for 127.0.0.1 at 2019-03-11 15:32:56 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by DatasetClassesController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "dataset_class"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dataset_class):
+  
+app/controllers/dataset_classes_controller.rb:49:in `dataset_class_params'
+app/controllers/dataset_classes_controller.rb:18:in `create'
+Started POST "/dataset_classes" for 127.0.0.1 at 2019-03-11 15:33:23 +0100
+Processing by DatasetClassesController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "dataset_class"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dataset_class):
+  
+app/controllers/dataset_classes_controller.rb:49:in `dataset_class_params'
+app/controllers/dataset_classes_controller.rb:18:in `create'
+Started POST "/labels" for 127.0.0.1 at 2019-03-11 15:33:54 +0100
+Processing by LabelsController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "label"=>{"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1}}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDatasetClass Load (2.1ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mLabel Create (6.2ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.1], ["y_pos", 0.2], ["user_id", 2], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-11 14:34:21.052536"], ["updated_at", "2019-03-11 14:34:21.052536"]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/label.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ (byebug):1
+  [1m[35mCACHE  (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+[active_model_serializers] Rendered LabelSerializer with ActiveModelSerializers::Adapter::Attributes (9.1ms)
+Completed 201 Created in 63756ms (Views: 42.4ms | ActiveRecord: 35.3ms)
+
+
+Started POST "/labels" for 127.0.0.1 at 2019-03-11 15:35:06 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "label"=>{"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1}}
+  [1m[35m (5.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDatasetClass Load (0.7ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mLabel Create (6.4ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.1], ["y_pos", 0.2], ["user_id", 2], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-11 14:35:09.708295"], ["updated_at", "2019-03-11 14:35:09.708295"]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDataset Load (0.8ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/label.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[36mLabel Load (1.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:30
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (1.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mImage Load (1.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+Completed 500 Internal Server Error in 94322ms (ActiveRecord: 45.9ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:5000 (Connection refused - connect(2) for "localhost" port 5000)):
+  
+app/controllers/labels_controller.rb:41:in `create'
+Started POST "/labels" for 127.0.0.1 at 2019-03-11 15:38:07 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "label"=>{"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1}}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDatasetClass Load (0.6ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mLabel Create (0.9ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.1], ["y_pos", 0.2], ["user_id", 2], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-11 14:38:14.394853"], ["updated_at", "2019-03-11 14:38:14.394853"]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mDataset Load (0.8ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/label.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[36mLabel Load (1.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/labels_controller.rb:30
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mImage Load (1.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+  [1m[36mCACHE Image Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:32
+Completed 500 Internal Server Error in 26703ms (ActiveRecord: 34.5ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `rescue in process_action'
