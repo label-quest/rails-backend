@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :labels
+  resources :users
   resources :dataset_classes
   resources :images
   resources :datasets

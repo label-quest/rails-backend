@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_124727) do
+ActiveRecord::Schema.define(version: 2019_03_11_132134) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -45,6 +45,25 @@ ActiveRecord::Schema.define(version: 2019_03_11_124727) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dataset_id"], name: "index_images_on_dataset_id"
+  end
+
+  create_table "labels", force: :cascade do |t|
+    t.float "x_pos"
+    t.float "y_pos"
+    t.integer "user_id"
+    t.integer "dataset_class_id"
+    t.integer "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dataset_class_id"], name: "index_labels_on_dataset_class_id"
+    t.index ["image_id"], name: "index_labels_on_image_id"
+    t.index ["user_id"], name: "index_labels_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
