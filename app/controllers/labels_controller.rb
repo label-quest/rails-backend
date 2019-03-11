@@ -20,27 +20,30 @@ class LabelsController < ApplicationController
     @label = Label.new(label_params)
 
     if @label.save
-      if @label.dataset.labels.count > 9 and @label.dataset.labels.count % 10 == 0
+      if @label.dataset.labels.count > 10 and @label.dataset.labels.count % 10 == 0
         json_body = {
           dataset: @label.dataset.id,
           data: []
         }
 
-        @label.dataset.labels.each do |label|
-          train_sample = {
-            file_path: label.image.file_path,
-            label: @label.dataset.majority_class.name
-          }
-          json_body[:data].push(train_sample)
+        @label.dataset.images.each do |image|
+          if image.labels.count > 0
+            train_sample = {
+              file_path: image.file_path,
+              label: image.majority_class.name
+            }
+            json_body[:data].push(train_sample)
+          end
         end
 
+        byebug
 
         conn = Faraday.new(url: 'http://localhost:5000')
 
         conn.post do |req|
           req.url '/train'
           req.headers['Content-Type'] = 'application/json'
-          req.body = json_body.to_s
+          req.body = json_body.to_json
         end
       end
 
