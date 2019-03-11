@@ -1,0 +1,404 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-11 11:41:18.207649"], ["updated_at", "2019-03-11 11:41:18.207649"]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2019-03-11 12:41:50 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julius/.rvm/gems/ruby-2.4.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julius/.rvm/gems/ruby-2.4.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (2.8ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2019-03-11 12:41:50 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-11 12:51:26 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateCustomers (20190311115108)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190311115108_create_customers.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190311115108_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190311115108"]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+Started GET "/" for 127.0.0.1 at 2019-03-11 12:51:42 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/julius/.rvm/gems/ruby-2.4.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/julius/.rvm/gems/ruby-2.4.1/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 12:51:56 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 12:52:09 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.08ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "customers"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.3ms)[0m  [1m[32mINSERT INTO "customers" ("name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Julius"], ["password", "test"], ["created_at", "2019-03-11 11:53:59.718165"], ["updated_at", "2019-03-11 11:53:59.718165"]]
+  [1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 12:54:03 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.4ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 12:58:32 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sebastian"], ["password", "test2"], ["created_at", "2019-03-11 11:58:47.773988"], ["updated_at", "2019-03-11 11:58:47.773988"]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Anthony"], ["password", "test3"], ["created_at", "2019-03-11 11:58:55.858427"], ["updated_at", "2019-03-11 11:58:55.858427"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 12:58:59 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:02:32 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.54ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+Migrating to CreateDatasets (20190311120337)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190311120337_create_datasets.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "datasets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "goal" float, "folder_path" varchar, "customer_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cb325e63f0"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+)[0m
+  ↳ db/migrate/20190311120337_create_datasets.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_datasets_on_customer_id" ON "datasets" ("customer_id")[0m
+  ↳ db/migrate/20190311120337_create_datasets.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190311120337"]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/bin/rake:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "datasets"[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDataset Create (0.3ms)[0m  [1m[32mINSERT INTO "datasets" ("name", "description", "goal", "folder_path", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test Dataset 1"], ["description", "Test description 1"], ["goal", 10.0], ["folder_path", "/"], ["customer_id", 1], ["created_at", "2019-03-11 12:06:14.844901"], ["updated_at", "2019-03-11 12:06:14.844901"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDataset Load (0.6ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDataset Create (0.9ms)[0m  [1m[32mINSERT INTO "datasets" ("name", "description", "goal", "folder_path", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test Dataset 2"], ["description", "Test description 2"], ["goal", 30.0], ["folder_path", "/"], ["customer_id", 3], ["created_at", "2019-03-11 12:06:35.047432"], ["updated_at", "2019-03-11 12:06:35.047432"]]
+  [1m[35m (35.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDataset Create (0.9ms)[0m  [1m[32mINSERT INTO "datasets" ("name", "description", "goal", "folder_path", "customer_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Test Dataset 3"], ["description", "Test description 3"], ["goal", 50.0], ["folder_path", "/"], ["customer_id", 1], ["created_at", "2019-03-11 12:06:48.638285"], ["updated_at", "2019-03-11 12:06:48.638285"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:06:51 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.49ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-11 13:07:00 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "id"=>"1", "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/1/datasets" for 127.0.0.1 at 2019-03-11 13:07:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/customers/1/datasets"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-11 13:07:10 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "id"=>"1", "customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+[active_model_serializers] Rendered CustomerSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/datasets" for 127.0.0.1 at 2019-03-11 13:07:16 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.07ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ? LIMIT ?[0m  [["customer_id", 1], ["LIMIT", 11]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+Started GET "/datasets" for 127.0.0.1 at 2019-03-11 13:08:43 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.96ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:08:50 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:17:21 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:17:44 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:18:56 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 34ms (Views: 2.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:18:59 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 13:19:28 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 21ms (Views: 2.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-11 13:19:30 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "id"=>"1", "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2019-03-11 13:19:35 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "placed_labels"=>[{"id"=>1, "x"=>21, "y"=>21}, {"id"=>2, "x"=>32, "y"=>32}], "id"=>"3", "customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
