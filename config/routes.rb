@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :images
   resources :datasets
   resources :customers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get 'datasets/:id/label_stats', :to => 'datasets#label_stats'
+
 end

@@ -1,5 +1,5 @@
 class DatasetsController < ApplicationController
-  before_action :set_dataset, only: [:show, :update, :destroy]
+  before_action :set_dataset, only: [:show, :update, :destroy, :label_stats]
 
   # GET /datasets
   def index
@@ -11,6 +11,24 @@ class DatasetsController < ApplicationController
   # GET /datasets/1
   def show
     render json: @dataset
+  end
+
+  #GET /datasets/1/label_stats
+  def label_stats
+    chart_json = []
+    colors = ["hsl(237, 70%, 50%)", "hsl(235, 70%, 50%)", "hsl(22, 70%, 50%)", "hsl(129, 70%, 50%)", "hsl(89, 70%, 50%)"]
+
+    @dataset.dataset_classes.each_with_index do | dataset_class, index |
+      slice_obj = {
+          id: dataset_class.name,
+          label: dataset_class.name,
+          value: dataset_class.labels.count,
+          color: colors[index]
+      }
+      chart_json.push(slice_obj)
+    end
+
+    render json: chart_json
   end
 
   # POST /datasets

@@ -1301,3 +1301,156 @@ SystemExit (exit):
   [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
   [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+Started POST "/datasets" for 127.0.0.1 at 2019-03-11 16:33:45 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by DatasetsController#create as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "dataset"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dataset):
+  
+app/controllers/datasets_controller.rb:67:in `dataset_params'
+app/controllers/datasets_controller.rb:36:in `create'
+Started GET "/datasets/1" for 127.0.0.1 at 2019-03-11 16:33:54 +0100
+Processing by DatasetsController#show as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:62
+[active_model_serializers]   [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:13
+[active_model_serializers] Rendered DatasetSerializer with ActiveModelSerializers::Adapter::Attributes (20.01ms)
+Completed 200 OK in 52ms (Views: 38.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/datasets/1/label_stats" for 127.0.0.1 at 2019-03-11 16:34:01 +0100
+Processing by DatasetsController#label_stats as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `dataset_classes' for nil:NilClass):
+  
+app/controllers/datasets_controller.rb:21:in `label_stats'
+Started GET "/datasets/1/label_stats" for 127.0.0.1 at 2019-03-11 16:35:15 +0100
+Processing by DatasetsController#label_stats as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:62
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 3]]
+  ↳ app/controllers/datasets_controller.rb:25
+No serializer found for resource: {:id=>"Car", :label=>"Car", :value=>1, :color=>"hsl(237, 70%, 50%)"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.12ms)
+Completed 200 OK in 24ms (Views: 2.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/datasets/" for 127.0.0.1 at 2019-03-11 16:35:30 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.74ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/datasets/" for 127.0.0.1 at 2019-03-11 16:36:14 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.78ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/datasets/1" for 127.0.0.1 at 2019-03-11 16:36:17 +0100
+Processing by DatasetsController#show as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:62
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:13
+[active_model_serializers] Rendered DatasetSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/datasets/1/label_stats" for 127.0.0.1 at 2019-03-11 16:36:25 +0100
+Processing by DatasetsController#label_stats as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:62
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 3]]
+  ↳ app/controllers/datasets_controller.rb:25
+No serializer found for resource: {:id=>"Car", :label=>"Car", :value=>1, :color=>"hsl(237, 70%, 50%)"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.23ms)
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 16:37:12 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-11 16:37:14 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "customer"=>{}}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets/1/label_stats" for 127.0.0.1 at 2019-03-11 16:37:31 +0100
+Processing by DatasetsController#label_stats as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:62
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:21
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" WHERE "labels"."dataset_class_id" = ?[0m  [["dataset_class_id", 3]]
+  ↳ app/controllers/datasets_controller.rb:25
+No serializer found for resource: {:id=>"Car", :label=>"Car", :value=>1, :color=>"hsl(237, 70%, 50%)"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.22ms)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
