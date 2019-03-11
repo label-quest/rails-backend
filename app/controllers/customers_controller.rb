@@ -64,7 +64,7 @@ class CustomersController < ApplicationController
   #POST /customer_authenticate
   def authenticate
     authenticated = false
-    
+
     json_resp = {
         ok: authenticated
     }

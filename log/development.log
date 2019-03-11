@@ -8170,3 +8170,498 @@ Processing by CustomersController#authenticate as */*
 Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 23:32:11 +0100
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:73
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:74
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 23:32:15 +0100
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:73
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:74
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:32:23 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.5ms)
+
+
+  
+NameError (undefined local variable or method `labellabel' for #<Class:0x007fd99ca38798>
+Did you mean?  labels_at):
+  
+app/models/dataset.rb:8:in `block in labels_at'
+app/models/dataset.rb:8:in `map'
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:32:25 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.5ms)
+
+
+  
+NameError (undefined local variable or method `labellabel' for #<Class:0x007fd99ca38798>
+Did you mean?  labels_at):
+  
+app/models/dataset.rb:8:in `block in labels_at'
+app/models/dataset.rb:8:in `map'
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:33:13 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (undefined local variable or method `labellabel' for #<Class:0x007fd99829ec48>
+Did you mean?  labels_at):
+  
+app/models/dataset.rb:8:in `block in labels_at'
+app/models/dataset.rb:8:in `map'
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:33:36 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.4ms)
+
+
+  
+NoMethodError (undefined method `date' for Mon, 11 Mar 2019 18:01:29 UTC +00:00:Time):
+  
+app/models/dataset.rb:8:in `block in labels_at'
+app/models/dataset.rb:8:in `map'
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:33:47 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.4ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>4}, {:x=>"2019-03-06", :y=>4}, {:x=>"2019-03-07", :y=>4}, {:x=>"2019-03-08", :y=>4}, {:x=>"2019-03-09", :y=>4}, {:x=>"2019-03-10", :y=>4}, {:x=>"2019-03-11", :y=>4}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.27ms)
+Completed 200 OK in 125ms (Views: 3.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:34:21 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.9ms)
+
+
+  
+NoMethodError (undefined method `+' for false:FalseClass):
+  
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:34:36 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `+' for false:FalseClass):
+  
+app/models/dataset.rb:8:in `labels_at'
+app/controllers/customers_controller.rb:27:in `block (2 levels) in overall_stats'
+app/controllers/customers_controller.rb:24:in `map'
+app/controllers/customers_controller.rb:24:in `block in overall_stats'
+app/controllers/customers_controller.rb:21:in `each_with_index'
+app/controllers/customers_controller.rb:21:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:34:49 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>0}, {:x=>"2019-03-06", :y=>0}, {:x=>"2019-03-07", :y=>0}, {:x=>"2019-03-08", :y=>0}, {:x=>"2019-03-09", :y=>0}, {:x=>"2019-03-10", :y=>0}, {:x=>"2019-03-11", :y=>4}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.27ms)
+Completed 200 OK in 62ms (Views: 2.6ms | ActiveRecord: 3.0ms)
+
+
