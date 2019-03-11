@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'datasets/:id/label_stats', :to => 'datasets#label_stats'
   get 'datasets/:id/progress', :to => 'datasets#progress'
 
+  post 'customer_authenticate', :to => 'customers#authenticate'
+
 end
