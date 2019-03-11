@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :customers
 
   get 'datasets/:id/label_stats', :to => 'datasets#label_stats'
+  get 'datasets/:id/progress', :to => 'datasets#progress'
 
 end

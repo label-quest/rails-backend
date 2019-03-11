@@ -1,5 +1,5 @@
 class DatasetsController < ApplicationController
-  before_action :set_dataset, only: [:show, :update, :destroy, :label_stats]
+  before_action :set_dataset, only: [:show, :update, :destroy, :label_stats, :progress]
 
   # GET /datasets
   def index
@@ -11,6 +11,20 @@ class DatasetsController < ApplicationController
   # GET /datasets/1
   def show
     render json: @dataset
+  end
+
+  #GET /datasets/1/progress
+  def progress
+    relative_progress = ((@dataset.labels.count / @dataset.goal) * 100).round(2)
+    if relative_progress > 100.00
+      relative_progress = 100.00
+    end
+
+    json_resp = {
+        progress: relative_progress
+    }
+
+    render json: json_resp
   end
 
   #GET /datasets/1/label_stats

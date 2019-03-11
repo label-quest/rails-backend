@@ -1454,3 +1454,445 @@ No serializer found for resource: {:id=>"Car", :label=>"Car", :value=>1, :color=
 Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:16:04 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.8ms)
+
+
+  
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `/' for #<Label::ActiveRecord_Associations_CollectionProxy:0x007f4dd81c3bf8>):
+  
+app/controllers/datasets_controller.rb:18:in `progress'
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:16:26 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `/' for #<Label::ActiveRecord_Associations_CollectionProxy:0x007f4dd82bf840>):
+  
+app/controllers/datasets_controller.rb:18:in `progress'
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:16:36 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (1.4ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[36mLabel Load (0.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.4ms)
+
+
+  
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `/' for #<Label::ActiveRecord_Associations_CollectionProxy:0x007f4dd8058e80>):
+  
+app/controllers/datasets_controller.rb:18:in `progress'
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:18:47 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.0ms)
+
+
+  
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `/' for #<Label::ActiveRecord_Associations_CollectionProxy:0x000000043712a8>):
+  
+app/controllers/datasets_controller.rb:18:in `progress'
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 1], ["LIMIT", 11]]
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:19:19 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 28ms (Views: 3.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:19:26 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/datasets/2" for 127.0.0.1 at 2019-03-11 17:19:36 +0100
+Processing by DatasetsController#show as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+[active_model_serializers]   [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:13
+[active_model_serializers] Rendered DatasetSerializer with ActiveModelSerializers::Adapter::Attributes (23.88ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/datasets/2/labels" for 127.0.0.1 at 2019-03-11 17:19:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/datasets/2/labels"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/labels" for 127.0.0.1 at 2019-03-11 17:19:55 +0100
+Processing by LabelsController#index as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "label"=>{"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1}}
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+  ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE DatasetClass Load (0.0ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers]   [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/labels_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (90.2ms)
+Completed 200 OK in 103ms (Views: 98.5ms | ActiveRecord: 4.2ms)
+
+
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDataset Update (0.3ms)[0m  [1m[33mUPDATE "datasets" SET "goal" = ?, "updated_at" = ? WHERE "datasets"."id" = ?[0m  [["goal", 40.0], ["updated_at", "2019-03-11 16:20:38.109440"], ["id", 1]]
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/datasets/1/labels" for 127.0.0.1 at 2019-03-11 17:20:47 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/datasets/1/labels"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/datasets/1/labels" for 127.0.0.1 at 2019-03-11 17:21:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/datasets/1/labels"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:21:08 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mDataset Load (0.5ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLabel Create (0.8ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.5], ["y_pos", 0.3], ["user_id", 1], ["dataset_class_id", 3], ["image_id", 3], ["created_at", "2019-03-11 16:21:45.854885"], ["updated_at", "2019-03-11 16:21:45.854885"]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 2], ["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDatasetClass Load (0.5ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.1ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLabel Create (0.4ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.5], ["y_pos", 0.3], ["user_id", 1], ["dataset_class_id", 1], ["image_id", 3], ["created_at", "2019-03-11 16:22:02.029769"], ["updated_at", "2019-03-11 16:22:02.029769"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ? LIMIT ?[0m  [["dataset_id", 2], ["LIMIT", 11]]
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:22:11 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.5ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:22:15 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:22:54 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 18ms (Views: 2.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:22:58 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:72
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:23:39 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 17ms (Views: 2.2ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDataset Update (0.5ms)[0m  [1m[33mUPDATE "datasets" SET "goal" = ?, "updated_at" = ? WHERE "datasets"."id" = ?[0m  [["goal", 12.0], ["updated_at", "2019-03-11 16:23:56.879822"], ["id", 1]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:23:59 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:24:02 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" ORDER BY "datasets"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDataset Update (0.5ms)[0m  [1m[33mUPDATE "datasets" SET "goal" = ?, "updated_at" = ? WHERE "datasets"."id" = ?[0m  [["goal", 20.0], ["updated_at", "2019-03-11 16:28:34.882874"], ["id", 2]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/datasets/1/progress" for 127.0.0.1 at 2019-03-11 17:28:38 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:28:42 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDataset Update (0.6ms)[0m  [1m[33mUPDATE "datasets" SET "goal" = ?, "updated_at" = ? WHERE "datasets"."id" = ?[0m  [["goal", 5.0], ["updated_at", "2019-03-11 16:28:50.616061"], ["id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/datasets/2/progress" for 127.0.0.1 at 2019-03-11 17:28:58 +0100
+Processing by DatasetsController#progress as */*
+  Parameters: {"x_pos"=>0.1, "y_pos"=>0.2, "user_id"=>2, "dataset_class_id"=>3, "image_id"=>1, "id"=>"2", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels" INNER JOIN "images" ON "labels"."image_id" = "images"."id" WHERE "images"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
