@@ -1,3 +1,5 @@
+require 'faraday'
+
 class LabelsController < ApplicationController
   before_action :set_label, only: [:show, :update, :destroy]
 
@@ -18,6 +20,30 @@ class LabelsController < ApplicationController
     @label = Label.new(label_params)
 
     if @label.save
+      if @label.dataset.labels.count > 9 and @label.dataset.labels.count % 10 == 0
+        json_body = {
+          dataset: @label.dataset.id,
+          data: []
+        }
+
+        @label.dataset.labels.each do |label|
+          train_sample = {
+            file_path: label.image.file_path,
+            label: @label.dataset_class.name
+          }
+          json_body[:data].push(train_sample)
+        end
+
+
+        conn = Faraday.new(url: 'http://localhost:5000')
+
+        conn.post do |req|
+          req.url '/train'
+          req.headers['Content-Type'] = 'application/json'
+          req.body = json_body.to_s
+        end
+      end
+
       render json: @label, status: :created, location: @label
     else
       render json: @label.errors, status: :unprocessable_entity
