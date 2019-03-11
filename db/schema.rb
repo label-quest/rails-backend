@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_120337) do
+ActiveRecord::Schema.define(version: 2019_03_11_124727) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.text "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dataset_classes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "dataset_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dataset_id"], name: "index_dataset_classes_on_dataset_id"
   end
 
   create_table "datasets", force: :cascade do |t|
@@ -28,6 +37,14 @@ ActiveRecord::Schema.define(version: 2019_03_11_120337) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_datasets_on_customer_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "file_path"
+    t.integer "dataset_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dataset_id"], name: "index_images_on_dataset_id"
   end
 
 end
