@@ -929,3 +929,16 @@ Processing by LabelsController#index as */*
 Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/customers" for 127.0.0.1 at 2019-03-11 14:37:08 +0100
+Processing by CustomersController#index as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 22ms (Views: 2.3ms | ActiveRecord: 1.5ms)
+
+
