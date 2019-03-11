@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :update, :destroy]
+  before_action :set_customer, only: [:show, :update, :destroy, :overall_stats]
 
   # GET /customers
   def index
@@ -11,6 +11,34 @@ class CustomersController < ApplicationController
   # GET /customers/1
   def show
     render json: @customer.to_json(:include => :datasets)
+  end
+
+  #GET /customers/1/overall_stats
+  def overall_stats
+    json_resp = []
+    colors = ["hsl(290, 70%, 50%)", "hsl(105, 70%, 50%)", "hsl(85, 70%, 50%)", "hsl(151, 70%, 50%)", "hsl(300, 70%, 50%)"]
+
+    @customer.datasets.each_with_index do |dataset, index|
+      data_obj = []
+
+      (Date.today - 6..Date.today).map do |day|
+        single_obj = {
+            x: day.iso8601,
+            y: Dataset.labels_at(day, dataset.id)
+        }
+        data_obj.push(single_obj)
+      end
+
+      dataset_obj = {
+        id: dataset.name,
+        color: colors[index],
+        data: data_obj
+      }
+
+      json_resp.push(dataset_obj)
+    end
+
+    render json: json_resp
   end
 
   # POST /customers
@@ -36,9 +64,11 @@ class CustomersController < ApplicationController
   #POST /customer_authenticate
   def authenticate
     authenticated = false
+    
     json_resp = {
         ok: authenticated
     }
+
     if !params[:username].blank? and !params[:password].blank?
       if Customer.find_by(name: params[:username])
         customer = Customer.find_by(name: params[:username])
@@ -55,10 +85,6 @@ class CustomersController < ApplicationController
         end
       end
     end
-
-    json_resp = {
-        ok: authenticated
-    }
 
     render json: json_resp
 

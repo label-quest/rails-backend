@@ -7827,3 +7827,346 @@ Processing by CustomersController#authenticate as */*
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 22:23:07 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:43
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:44
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 22:54:57 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:71
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:72
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 16ms (Views: 3.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 22:55:42 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/customers/1/overall_stats"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 22:55:53 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [POST] "/customers/1/overall_stats"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 22:55:58 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:103
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."created_at" = ? AND "labels"."dataset" = ? LIMIT ?[0m  [["created_at", "2019-03-05"], ["dataset", 1], ["LIMIT", 11]]
+  ↳ app/controllers/customers_controller.rb:41
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: labels.dataset: SELECT  "labels".* FROM "labels" WHERE "labels"."created_at" = ? AND "labels"."dataset" = ? LIMIT ?):
+  
+app/controllers/customers_controller.rb:41:in `overall_stats'
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 22:59:57 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:103
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>0}, {:x=>"2019-03-06", :y=>0}, {:x=>"2019-03-07", :y=>0}, {:x=>"2019-03-08", :y=>0}, {:x=>"2019-03-09", :y=>0}, {:x=>"2019-03-10", :y=>0}, {:x=>"2019-03-11", :y=>0}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.35ms)
+Completed 200 OK in 41ms (Views: 4.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:01:15 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:103
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>0}, {:x=>"2019-03-06", :y=>0}, {:x=>"2019-03-07", :y=>0}, {:x=>"2019-03-08", :y=>0}, {:x=>"2019-03-09", :y=>0}, {:x=>"2019-03-10", :y=>0}, {:x=>"2019-03-11", :y=>0}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.33ms)
+Completed 200 OK in 36ms (Views: 2.8ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mDataset Load (0.6ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:04:58 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:103
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-05"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-06"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-07"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-08"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-09"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-10"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" = ?[0m  [["created_at", "2019-03-11"]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>0}, {:x=>"2019-03-06", :y=>0}, {:x=>"2019-03-07", :y=>0}, {:x=>"2019-03-08", :y=>0}, {:x=>"2019-03-09", :y=>0}, {:x=>"2019-03-10", :y=>0}, {:x=>"2019-03-11", :y=>0}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.28ms)
+Completed 200 OK in 41ms (Views: 2.7ms | ActiveRecord: 3.3ms)
+
+
+  [1m[36mLabel Load (0.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mLabel Load (0.5ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."created_at" = ? LIMIT ?[0m  [["created_at", "2019-03-11"], ["LIMIT", 11]]
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."created_at" = ? LIMIT ?[0m  [["created_at", "2019-03-11"], ["LIMIT", 11]]
+Started GET "/customers/1/overall_stats" for 127.0.0.1 at 2019-03-11 23:10:39 +0100
+Processing by CustomersController#overall_stats as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:103
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:21
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-05 00:00:00"], ["created_at", "2019-03-05 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-06 00:00:00"], ["created_at", "2019-03-06 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-07 00:00:00"], ["created_at", "2019-03-07 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-08 00:00:00"], ["created_at", "2019-03-08 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-09 00:00:00"], ["created_at", "2019-03-09 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-10 00:00:00"], ["created_at", "2019-03-10 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mLabel Load (0.2ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-11 00:00:00"], ["created_at", "2019-03-11 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.1ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-05 00:00:00"], ["created_at", "2019-03-05 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.1ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-06 00:00:00"], ["created_at", "2019-03-06 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-07 00:00:00"], ["created_at", "2019-03-07 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-08 00:00:00"], ["created_at", "2019-03-08 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-09 00:00:00"], ["created_at", "2019-03-09 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-10 00:00:00"], ["created_at", "2019-03-10 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Label Load (0.0ms)[0m  [1m[34mSELECT "labels".* FROM "labels" WHERE "labels"."created_at" BETWEEN ? AND ?[0m  [["created_at", "2019-03-11 00:00:00"], ["created_at", "2019-03-11 23:59:59.999999"]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+  [1m[36mCACHE Dataset Load (0.0ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/dataset.rb:8
+No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%, 50%)", :data=>[{:x=>"2019-03-05", :y=>0}, {:x=>"2019-03-06", :y=>0}, {:x=>"2019-03-07", :y=>0}, {:x=>"2019-03-08", :y=>0}, {:x=>"2019-03-09", :y=>0}, {:x=>"2019-03-10", :y=>0}, {:x=>"2019-03-11", :y=>4}]}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.34ms)
+Completed 200 OK in 93ms (Views: 3.6ms | ActiveRecord: 5.9ms)
+
+
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" WHERE "labels"."created_at" = ? LIMIT ?[0m  [["created_at", "2019-03-11"], ["LIMIT", 11]]
+Started GET "/customer_authenticate" for 127.0.0.1 at 2019-03-11 23:30:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/customer_authenticate"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 23:31:05 +0100
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:71
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:72
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 21ms (Views: 5.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/customer_authenticate" for 127.0.0.1 at 2019-03-11 23:31:28 +0100
+Processing by CustomersController#authenticate as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:73
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."name" = ? LIMIT ?[0m  [["name", "Julius"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:74
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 0.7ms)
+
+
