@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get 'customers/:id/overall_stats', :to => 'customers#overall_stats'
 
+  get 'training_sample', :to => 'images#training_sample'
+
   post 'customer_authenticate', :to => 'customers#authenticate'
 
   post 'label_placement', :to => 'labels#label_placement'

@@ -13,6 +13,29 @@ class ImagesController < ApplicationController
     render json: @image
   end
 
+  # Get /training_sample
+  def training_sample
+    offset = rand(Image.count)
+    random_image = Image.offset(offset).first
+
+    json_resp = {
+        labels: [],
+        id: random_image.id,
+        imageSrc: random_image.file_path
+    }
+
+    random_image.dataset.dataset_classes.each do |dataset_class|
+      dataset_class_obj = {
+          name: dataset_class.name,
+          id: dataset_class.id
+      }
+
+      json_resp[:labels].push(dataset_class_obj)
+    end
+
+    render json: json_resp
+  end
+
   # POST /images
   def create
     @image = Image.new(image_params)
