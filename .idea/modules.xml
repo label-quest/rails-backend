@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/rails-backend.iml" filepath="$PROJECT_DIR$/.idea/rails-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../user-front-end/.idea/user-front-end.iml" filepath="$PROJECT_DIR$/../user-front-end/.idea/user-front-end.iml" />
     </modules>
   </component>
 </project>

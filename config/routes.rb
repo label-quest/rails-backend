@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   post 'customer_authenticate', :to => 'customers#authenticate'
 
+  post 'label_placement', :to => 'labels#label_placement'
+
 end

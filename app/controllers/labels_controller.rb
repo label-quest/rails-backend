@@ -15,6 +15,25 @@ class LabelsController < ApplicationController
     render json: @label
   end
 
+  # POST /label_placement
+  def label_placement
+    saved = false
+    byebug
+    if !params[:user_id].blank? and !params[:image_id].blank? and !params[:labels].blank?
+      if User.find_by(id: params[:user_id]) and Image.find_by(id: params[:image_id])
+        user = User.find_by(id: params[:user_id])
+        image = Image.find_by(id: params[:image_id])
+        saved = true
+        params[:labels].each do |label_obj|
+          dataset_class = DatasetClass.find_by(id: label_obj[:label_id])
+          Label.create(user: user, image: image, dataset_class: dataset_class, x_pos: label_obj[:x], y_pos: label_obj[:y])
+        end
+      end
+    end
+
+    render json: {ok: saved}
+  end
+
   # POST /labels
   def create
     @label = Label.new(label_params)
@@ -75,6 +94,6 @@ class LabelsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def label_params
-      params.require(:label).permit(:x_pos, :y_pos, :user_id, :dataset_class_id, :image_id)
+      params.require(:label).permit(:x_pos, :y_pos, :user_id, :dataset_class_id, :image_id, :labels)
     end
 end

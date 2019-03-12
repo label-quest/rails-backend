@@ -8665,3 +8665,540 @@ No serializer found for resource: {:id=>"Test Dataset 1", :color=>"hsl(290, 70%,
 Completed 200 OK in 62ms (Views: 2.6ms | ActiveRecord: 3.0ms)
 
 
+Started GET "/customers/1/datasets" for 127.0.0.1 at 2019-03-11 23:59:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/customers/1/datasets"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-11 23:59:16 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-12 00:03:32 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 34ms (Views: 2.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-12 00:03:51 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `dataset_class' for #<Dataset:0x007fd99864da10>
+Did you mean?  dataset_classes
+               dataset_classes=
+               dataset_class_ids):
+  
+app/controllers/customers_controller.rb:8:in `index'
+Started GET "/customers" for 127.0.0.1 at 2019-03-12 00:03:58 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 43ms (Views: 2.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-12 00:04:47 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"username"=>"Julius", "password"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 38ms (Views: 3.0ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 100], ["username", "Test"], ["created_at", "2019-03-12 09:42:42.252940"], ["updated_at", "2019-03-12 09:42:42.252940"]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 100], ["username", "Test2"], ["created_at", "2019-03-12 09:42:51.536873"], ["updated_at", "2019-03-12 09:42:51.536873"]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("id", "username", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["id", 1000000000000], ["username", "Test3"], ["created_at", "2019-03-12 09:42:58.426778"], ["updated_at", "2019-03-12 09:42:58.426778"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1000000000000]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 100]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users" for 127.0.0.1 at 2019-03-12 10:44:37 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bla", "id"=>"11111111111111111"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for 127.0.0.1 at 2019-03-12 10:45:24 +0100
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users?id=111111&username=bla" for 127.0.0.1 at 2019-03-12 10:45:45 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"bla", "id"=>"111111"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for 127.0.0.1 at 2019-03-12 10:45:55 +0100
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Bla", "id"=>"11111111111111111"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for 127.0.0.1 at 2019-03-12 10:47:28 +0100
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/customers" for 127.0.0.1 at 2019-03-12 10:49:23 +0100
+Processing by CustomersController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: customer):
+  
+app/controllers/customers_controller.rb:106:in `customer_params'
+app/controllers/customers_controller.rb:46:in `create'
+Started POST "/users" for 127.0.0.1 at 2019-03-12 10:50:37 +0100
+Processing by UsersController#create as */*
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-03-12 09:50:37.208110"], ["updated_at", "2019-03-12 09:50:37.208110"]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:20
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (0.27ms)
+Completed 201 Created in 38ms (Views: 14.2ms | ActiveRecord: 8.9ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1000000000001]]
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" ORDER BY "images"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDatasetClass Load (0.3ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDatasetClass Load (0.5ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mDatasetClass Load (0.3ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" ORDER BY "dataset_classes"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:34:03 +0100
+Processing by LabelsController#label_placement as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+  [1m[36mLabel Load (0.4ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" ORDER BY "labels"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" ORDER BY "labels"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:34:51 +0100
+Processing by LabelsController#label_placement as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:36:22 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:36:33 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 44986ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:37:21 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 52953ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:38:19 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 96639ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:39:58 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 7566ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:40:40 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 58032ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:41:49 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 30204ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:42:22 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 81835ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:43:46 +0100
+Processing by LabelsController#label_placement as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 21593ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement?user_id=1" for 127.0.0.1 at 2019-03-12 11:44:10 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>"1"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 41531ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement?user_id=1" for 127.0.0.1 at 2019-03-12 11:47:44 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>"1"}
+Completed 400 Bad Request in 157311ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: label):
+  
+app/controllers/labels_controller.rb:97:in `label_params'
+app/controllers/labels_controller.rb:22:in `label_placement'
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:50:22 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"label"=>{"user_id"=>1}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 63644ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:52:12 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "label"=>{"user_id"=>1, "image_id"=>1}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+Completed 500 Internal Server Error in 18428ms (ActiveRecord: 3.1ms)
+
+
+  
+ArgumentError (Unsupported argument type: 1 (Integer)):
+  
+app/controllers/labels_controller.rb:23:in `label_placement'
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:52:34 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "label"=>{"user_id"=>1, "image_id"=>1}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+Completed 500 Internal Server Error in 31038ms (ActiveRecord: 3.0ms)
+
+
+  
+ArgumentError (Unsupported argument type: 1 (Integer)):
+  
+app/controllers/labels_controller.rb:23:in `label_placement'
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:53:13 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "label"=>{"user_id"=>1, "image_id"=>1}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.7ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[36mCACHE Image Load (0.2ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:25
+Completed 500 Internal Server Error in 29371ms (ActiveRecord: 9.1ms)
+
+
+  
+NoMethodError (undefined method `each' for nil:NilClass):
+  
+app/controllers/labels_controller.rb:27:in `label_placement'
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 11:55:27 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/julius/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "label"=>{"user_id"=>1, "image_id"=>1}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[36mCACHE Image Load (0.3ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:25
+  [1m[36mDatasetClass Load (0.9ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:28
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labels_controller.rb:29
+  [1m[36mLabel Create (6.3ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.5], ["y_pos", 0.2], ["user_id", 1], ["dataset_class_id", 1], ["image_id", 1], ["created_at", "2019-03-12 10:55:39.624062"], ["updated_at", "2019-03-12 10:55:39.624062"]]
+  ↳ app/controllers/labels_controller.rb:29
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labels_controller.rb:29
+  [1m[36mDatasetClass Load (0.6ms)[0m  [1m[34mSELECT  "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:28
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labels_controller.rb:29
+  [1m[36mLabel Create (1.0ms)[0m  [1m[32mINSERT INTO "labels" ("x_pos", "y_pos", "user_id", "dataset_class_id", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["x_pos", 0.1], ["y_pos", 0.6], ["user_id", 1], ["dataset_class_id", 3], ["image_id", 1], ["created_at", "2019-03-12 10:55:39.687122"], ["updated_at", "2019-03-12 10:55:39.687122"]]
+  ↳ app/controllers/labels_controller.rb:29
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labels_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 24703ms (Views: 43.6ms | ActiveRecord: 37.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
+  [1m[36mLabel Load (0.3ms)[0m  [1m[34mSELECT  "labels".* FROM "labels" ORDER BY "labels"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mLabel Load (0.5ms)[0m  [1m[34mSELECT "labels".* FROM "labels"[0m
+Started POST "/datasets" for 127.0.0.1 at 2019-03-12 11:58:20 +0100
+Processing by DatasetsController#create as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "dataset"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: dataset):
+  
+app/controllers/datasets_controller.rb:81:in `dataset_params'
+app/controllers/datasets_controller.rb:50:in `create'
+Started GET "/datasets" for 127.0.0.1 at 2019-03-12 11:58:29 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "dataset"=>{}}
+  [1m[36mDataset Load (0.3ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers]   [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.97ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2019-03-12 11:58:42 +0100
+Processing by CustomersController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers"[0m
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDataset Load (0.1ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/controllers/customers_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/customers_controller.rb:8
+Completed 200 OK in 23ms (Views: 3.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2019-03-12 11:59:01 +0100
+Processing by CustomersController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "id"=>"1", "customer"=>{}}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:101
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets" WHERE "datasets"."customer_id" = ?[0m  [["customer_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/customers_controller.rb:13
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/customers_controller.rb:13
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/datasets71" for 127.0.0.1 at 2019-03-12 11:59:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/datasets71"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/datasets/1" for 127.0.0.1 at 2019-03-12 11:59:09 +0100
+Processing by DatasetsController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+[active_model_serializers]   [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/datasets_controller.rb:13
+[active_model_serializers] Rendered DatasetSerializer with ActiveModelSerializers::Adapter::Attributes (1.21ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/datasets" for 127.0.0.1 at 2019-03-12 11:59:56 +0100
+  
+SyntaxError (/home/julius/Dokumente/Uni/TUM/Module/Programming Database Web Applications/rails-backend/app/controllers/datasets_controller.rb:8: syntax error, unexpected tSTRING_DEND, expecting ')'
+(:include => :dataset_classes})
+                              ^
+/home/julius/Dokumente/Uni/TUM/Module/Programming Database Web Applications/rails-backend/app/controllers/datasets_controller.rb:25: syntax error, unexpected tSTRING_DEND, expecting '}'
+    }
+     ^
+/home/julius/Dokumente/Uni/TUM/Module/Programming Database Web Applications/rails-backend/app/controllers/datasets_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+      }
+       ^
+/home/julius/Dokumente/Uni/TUM/Module/Programming Database Web Applications/rails-backend/app/controllers/datasets_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/datasets_controller.rb:8: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/controllers/datasets_controller.rb:25: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/datasets_controller.rb:41: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/controllers/datasets_controller.rb:83: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/datasets" for 127.0.0.1 at 2019-03-12 12:00:02 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/datasets_controller.rb:8
+Completed 200 OK in 23ms (Views: 2.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/datasets" for 127.0.0.1 at 2019-03-12 12:00:21 +0100
+Processing by DatasetsController#index as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT "datasets".* FROM "datasets"[0m
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.2ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 2]]
+  ↳ app/controllers/datasets_controller.rb:8
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 3]]
+  ↳ app/controllers/datasets_controller.rb:8
+Completed 200 OK in 27ms (Views: 3.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/datasets/1" for 127.0.0.1 at 2019-03-12 12:00:26 +0100
+Processing by DatasetsController#show as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[{"x"=>0.5, "y"=>0.2, "label_id"=>1}, {"x"=>0.1, "y"=>0.6, "label_id"=>3}], "id"=>"1", "dataset"=>{}}
+  [1m[36mDataset Load (0.2ms)[0m  [1m[34mSELECT  "datasets".* FROM "datasets" WHERE "datasets"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/datasets_controller.rb:76
+  [1m[36mDatasetClass Load (0.1ms)[0m  [1m[34mSELECT "dataset_classes".* FROM "dataset_classes" WHERE "dataset_classes"."dataset_id" = ?[0m  [["dataset_id", 1]]
+  ↳ app/controllers/datasets_controller.rb:13
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+

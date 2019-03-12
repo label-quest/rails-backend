@@ -5,12 +5,12 @@ class CustomersController < ApplicationController
   def index
     @customers = Customer.all
 
-    render json: @customers.to_json(:include => :datasets)
+    render json: @customers.to_json(:include => {:datasets => {:include => :dataset_classes}})
   end
 
   # GET /customers/1
   def show
-    render json: @customer.to_json(:include => :datasets)
+    render json: @customer.to_json(:include => {:datasets => {:include => :dataset_classes}})
   end
 
   #GET /customers/1/overall_stats

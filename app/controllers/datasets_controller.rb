@@ -5,12 +5,12 @@ class DatasetsController < ApplicationController
   def index
     @datasets = Dataset.all
 
-    render json: @datasets
+    render json: @datasets.to_json(:include => :dataset_classes)
   end
 
   # GET /datasets/1
   def show
-    render json: @dataset
+    render json: @dataset.to_json(:include => :dataset_classes)
   end
 
   #GET /datasets/1/progress
