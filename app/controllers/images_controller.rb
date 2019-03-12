@@ -31,10 +31,8 @@ class ImagesController < ApplicationController
 
     json_resp = {
         labels: [],
-        image: {
-          id: random_image.id,
-          imageSrc: random_image.file_path
-        }
+        id: random_image.id,
+        imageSrc: random_image.file_path
     }
 
     conn = Faraday.new(url: 'http://localhost:5000')

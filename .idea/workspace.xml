@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70c3a20a-d86d-48eb-88b7-042a038a2779" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.byebug_history" beforeDir="false" afterPath="$PROJECT_DIR$/.byebug_history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/images_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/images_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-front-end/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../user-front-end/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/labels_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/labels_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/development.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db/development.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-front-end/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../user-front-end/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../user-front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../user-front-end/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-front-end/reducers/GameActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../user-front-end/reducers/GameActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../user-front-end/reducers/UserActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../user-front-end/reducers/UserActions.js" afterDir="false" />
     </list>
@@ -24,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/labels_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-end-line="1" />
+            <state relative-caret-position="304">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -45,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="913">
-              <caret line="77" column="26" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="26" />
+            <state relative-caret-position="494">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -54,8 +56,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/datasets_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state>
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../user-front-end/reducers/GameActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../user-front-end/Game.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="127" column="33" lean-forward="true" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/dataset.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="36" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -63,17 +95,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="171">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/images_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+            <state relative-caret-position="209">
+              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -93,13 +125,20 @@
     <findStrings>
       <find>2.4</find>
       <find>require(:user)</find>
-      <find>192.168.10.144:8000</find>
       <find>label_params</find>
       <find>set_label</find>
+      <find>192.168.10.144:8000</find>
+      <find>192.168.10.144:3000</find>
+      <find>Error ge</find>
+      <find>10.183.49.102</find>
+      <find>10.48.152.31</find>
+      <find>bild</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>10.183.49.102:3000</replace>
+      <replace>10.48.152.31</replace>
+      <replace>10.183.49.102</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/../user-front-end</dir>
@@ -123,8 +162,9 @@
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/datasets_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/labels_controller.rb" />
+        <option value="$PROJECT_DIR$/../user-front-end/reducers/GameActions.js" />
         <option value="$PROJECT_DIR$/app/controllers/images_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/labels_controller.rb" />
       </list>
     </option>
   </component>
@@ -325,12 +365,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552307979289</updated>
       <workItem from="1552307982758" duration="26183000" />
-      <workItem from="1552379499852" duration="14723000" />
+      <workItem from="1552379499852" duration="20520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40906000" />
+    <option name="totallyTimeSpent" value="46703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -393,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/dataset.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/customer.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -431,15 +464,6 @@
           <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../user-front-end/reducers/GameActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -476,20 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/datasets_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/image.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -497,10 +507,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/labels_controller.rb">
+    <entry file="file://$PROJECT_DIR$/../user-front-end/reducers/GameActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-end-line="1" />
+        <state relative-caret-position="302">
+          <caret line="66" column="17" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../user-front-end/Game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="127" column="33" lean-forward="true" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/images_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -511,17 +538,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="913">
-          <caret line="77" column="26" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="26" />
+        <state relative-caret-position="171">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/images_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/dataset.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="35" column="42" lean-forward="true" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+        <state relative-caret-position="114">
+          <caret line="6" column="36" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/customers_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/datasets_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/labels_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
         </state>
       </provider>
     </entry>

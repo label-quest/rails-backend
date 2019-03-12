@@ -25,7 +25,7 @@ class LabelsController < ApplicationController
         image = Image.find_by(id: params[:image_id])
         saved = true
         params[:labels].each do |label_obj|
-          dataset_class = DatasetClass.find_by(id: label_obj[:label_id])
+          dataset_class = DatasetClass.find_by(id: label_obj[:id])
           Label.create(user: user, image: image, dataset_class: dataset_class, x_pos: label_obj[:x], y_pos: label_obj[:y])
         end
       end
