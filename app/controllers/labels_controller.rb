@@ -18,8 +18,8 @@ class LabelsController < ApplicationController
   # POST /label_placement
   def label_placement
     saved = false
-    byebug
-    if !params[:user_id].blank? and !params[:image_id].blank? and !params[:labels].blank?
+
+    if !params[:user_id].blank? and !params[:image_id].blank?
       if User.find_by(id: params[:user_id]) and Image.find_by(id: params[:image_id])
         user = User.find_by(id: params[:user_id])
         image = Image.find_by(id: params[:image_id])

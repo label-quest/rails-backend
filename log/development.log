@@ -9328,3 +9328,66 @@ Processing by ImagesController#training_sample as */*
 Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/label_placement" for 127.0.0.1 at 2019-03-12 13:35:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/label_placement"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 13:35:08 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[], "label"=>{"user_id"=>1, "image_id"=>1}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 38728ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 13:35:53 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[], "label"=>{"user_id"=>1, "image_id"=>1}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 13:36:05 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[], "label"=>{"user_id"=>1, "image_id"=>1}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/label_placement" for 127.0.0.1 at 2019-03-12 13:36:11 +0100
+Processing by LabelsController#label_placement as */*
+  Parameters: {"user_id"=>1, "image_id"=>1, "labels"=>[], "label"=>{"user_id"=>1, "image_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:23
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:24
+  [1m[36mCACHE Image Load (0.0ms)[0m  [1m[34mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/labels_controller.rb:25
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 24ms (Views: 2.4ms | ActiveRecord: 2.4ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "labels"[0m
