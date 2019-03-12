@@ -18,8 +18,16 @@ class ImagesController < ApplicationController
 
   # Get /training_sample
   def training_sample
+    render json: {error: "user_id missing"} unless not params[:user_id].blank?
+    render json: {error: "user does not exist"} unless User.find_by(id: params[:user_id])
+
     offset = rand(Image.count)
     random_image = Image.offset(offset).first
+
+    labeled_images_ids = User.find_by(id: params[:user_id]).labels.map { |label| label.image.id }
+    not_yet_labeled_images = Image.where(["id NOT IN (?)", labeled_images_ids]).shuffle
+
+    random_image = not_yet_labeled_images[0] if not_yet_labeled_images.count > 0
 
     json_resp = {
         labels: [],
@@ -88,6 +96,6 @@ class ImagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def image_params
-      params.require(:image).permit(:file_path, :dataset_id)
+      params.require(:image).permit(:file_path, :dataset_id, :user_id)
     end
 end
