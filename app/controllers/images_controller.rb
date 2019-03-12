@@ -1,3 +1,6 @@
+require 'faraday'
+require 'json'
+
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :update, :destroy]
 
@@ -20,11 +23,27 @@ class ImagesController < ApplicationController
 
     json_resp = {
         labels: [],
-        id: random_image.id,
-        imageSrc: random_image.file_path
+        image: {
+          id: random_image.id,
+          imageSrc: random_image.file_path
+        }
     }
 
-    random_image.dataset.dataset_classes.each do |dataset_class|
+    conn = Faraday.new(url: 'http://localhost:5000')
+
+    response = conn.get 'http://localhost:5000/classify?file_path=' + random_image.file_path + '&dataset=' + random_image.dataset.name
+
+    suggested_labels = JSON.parse(response.body).values[0]
+
+    if suggested_labels.count > 5
+      suggested_labels = suggested_labels[0..4]
+    end
+
+    suggested_labels.each do |suggested_label|
+      next unless DatasetClass.find_by(name: suggested_label)
+
+      dataset_class = DatasetClass.find_by(name: suggested_label)
+
       dataset_class_obj = {
           name: dataset_class.name,
           id: dataset_class.id

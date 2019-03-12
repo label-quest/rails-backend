@@ -55,8 +55,6 @@ class LabelsController < ApplicationController
           end
         end
 
-        byebug
-
         conn = Faraday.new(url: 'http://localhost:5000')
 
         conn.post do |req|
