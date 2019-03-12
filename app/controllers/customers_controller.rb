@@ -68,7 +68,7 @@ class CustomersController < ApplicationController
     json_resp = {
         ok: authenticated
     }
-
+    
     if !params[:username].blank? and !params[:password].blank?
       if Customer.find_by(name: params[:username])
         customer = Customer.find_by(name: params[:username])
